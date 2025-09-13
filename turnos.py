@@ -50,3 +50,11 @@ class ListaTurnos:
             turnos.append(actual.turno)
             actual = actual.siguiente
         return turnos
+    
+    def calcular_tiempo_espera(self):
+        total = 0
+        tiempos = []
+        for turno in self.turno:
+            tiempos.append(total)
+            total += turno.tiempo_atencion
+        return tiempos
